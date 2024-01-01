@@ -5,9 +5,9 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 __version__ = "0.0.0"
 
-REPO_NAME = "DeepClassify"
+REPO_NAME = "Fine-Tune-LLAMA2"
 AUTHOR_USER_NAME = "SuyodhanJ6"
-SRC_REPO = "DeepClassify"
+SRC_REPO = "lama2FineTune"
 AUTHOR_EMAIL = "prashantmalge181@gmail.com"
 
 setuptools.setup(
@@ -15,7 +15,7 @@ setuptools.setup(
     version=__version__,
     author=AUTHOR_USER_NAME,
     author_email=AUTHOR_EMAIL,
-    description="A small python package for CNN app",
+    description="Generating automatically fine tunning process using lama2FineTune",
     long_description=long_description,
     long_description_content="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",

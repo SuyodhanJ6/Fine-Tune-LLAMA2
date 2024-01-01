@@ -1,27 +1,15 @@
-# Project Template Generator Script
+# LLAMA2 Fine-Tuning Project
 
 [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+Fine-tune LLAMA2 language models with custom data using modular coding and a Streamlit app.
+
 ## Overview
 
-The Project Template Generator Script is a handy tool designed to simplify the initial setup of your new projects. It automates the creation of directories and files commonly used in software development, helping you maintain a consistent project structure and save time on repetitive tasks.
+This project provides a modular structure for fine-tuning LLAMA2 language models with custom data. The Streamlit app offers a user-friendly interface for easy interaction with the fine-tuning process.
 
-## The structure is organized as follows:
+## Project Structure
 
-- `.github/workflows/`: GitHub Actions workflow configuration files.
-- `src/`: Source code directory containing Python modules for the deep learning model.
-- `tests/`: Unit and integration test cases and test data.
-- `configs/`: Configuration files, including `config.yaml` for model hyperparameters.
-- `dvc.yaml`: Data version control configuration for managing dataset versions.
-- `params.yaml`: Hyperparameters and configuration.
-- `init_setup.sh`: Initialization script for setting up the project.
-- `requirements.txt`: Python package dependencies.
-- `requirements_dev.txt`: Development-specific dependencies.
-- `setup.py`: Python package setup script.
-- `setup.cfg`: Configuration for package distribution.
-- `pyproject.toml`: Project metadata.
-- `tox.ini`: Configuration for testing environments.
-- `research/`: Research-related files, including a Jupyter Notebook for experiments (`trials.ipynb`).
 
 
 ## Features
