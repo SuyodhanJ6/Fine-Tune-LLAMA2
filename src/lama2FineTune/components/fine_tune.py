@@ -4,6 +4,8 @@ import logging
 from datetime import datetime
 from gradientai import Gradient
 
+from lama2FineTune.constants import MODEL_ADAPTER_NAME, NUM_EPOCHS
+from lama2FineTune.config import SAMPLES
 from lama2FineTune.constants.env_varaible import GRADIENT_WORKSPACE_ID, GRADIENT_ACCESS_TOKEN
 from lama2FineTune.logger import logging
 from lama2FineTune.exception import Llama2Exception
@@ -28,11 +30,16 @@ class FineTuner:
 
     def fine_tune_model(self, samples):
         # Fine-tune the model using the provided samples and number of epochs
-        for epoch in range(self.num_epochs):
-            for sample in samples:
-                query = sample["inputs"]
-                response = sample["response"]
-                self.model_adapter.fine_tune(inputs=query, targets=response)
+        # for epoch in range(self.num_epochs):
+        #     for sample in samples:
+        #         query = sample["inputs"]
+        #         response = sample["response"]
+        #         self.model_adapter.fine_tune(inputs=query, targets=response)
+        count = 0
+        while count < NUM_EPOCHS:
+            logging.info(f"Fine-tuning the model with iteration {count + 1}")
+            self.model_adapter.fine_tune(samples=samples)
+            count = count + 1
 
     def fine_tune(self):
         try:
@@ -52,12 +59,12 @@ class FineTuner:
             # Handle exceptions using custom exception class and logging
            raise Llama2Exception(e, sys)
 
-        finally:
-            # Clean up resources if needed
-            if self.model_adapter:
-                self.model_adapter.delete()
-            if self.gradient:
-                self.gradient.close()
+        # finally:
+        #     # Clean up resources if needed
+        #     if self.model_adapter:
+        #         self.model_adapter.delete()
+        #     if self.gradient:
+                # self.gradient.close()
 
 # if __name__ == "__main__":
 #     # Example usage
